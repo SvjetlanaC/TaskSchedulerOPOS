@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/application/Main.java=UTF-8
+encoding//src/controllers/MainController.java=UTF-8
+encoding//src/taskScheduler/TaskScheduler.java=UTF-8
+encoding//src/tasks/SortingPixelsTask.java=UTF-8
+encoding//src/tasks/Task.java=UTF-8

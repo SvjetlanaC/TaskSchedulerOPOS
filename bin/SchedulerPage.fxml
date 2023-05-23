@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SchedulerPageController">
+   <children>
+      <Text layoutX="40.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Novi zadatak:">
+         <font>
+            <Font name="Courier New" size="26.0" />
+         </font>
+      </Text>
+      <Label layoutX="40.0" layoutY="73.0" text="Prioritet:">
+         <font>
+            <Font name="Courier New Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="108.0" text="Vrijeme izvršavanja:">
+         <font>
+            <Font name="Courier New Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="143.0" text="Nivo paralelizma:">
+         <font>
+            <Font name="Courier New Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="184.0" text="Krajnji rok:">
+         <font>
+            <Font name="Courier New Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="priorityTextField" layoutX="189.0" layoutY="72.0" text="5" />
+      <TextField fx:id="timeOfExecutionTextField" layoutX="264.0" layoutY="107.0" text="2000" />
+      <TextField fx:id="parallelTextField" layoutX="243.0" layoutY="142.0" text="1" />
+      <TextField fx:id="hoursTextField" layoutX="345.0" layoutY="183.0" prefHeight="26.0" prefWidth="29.0" text="00" />
+      <TextField fx:id="secondsTextField" layoutX="424.0" layoutY="183.0" prefHeight="26.0" prefWidth="29.0" text="00" />
+      <TextField fx:id="minutesTextField" layoutX="385.0" layoutY="183.0" prefHeight="26.0" prefWidth="29.0" text="00" />
+      <DatePicker fx:id="datePicker" layoutX="176.0" layoutY="183.0" prefHeight="26.0" prefWidth="157.0" />
+      <Text layoutX="379.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" wrappingWidth="11.4014892578125" />
+      <Text layoutX="418.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" wrappingWidth="11.4014892578125" />
+      <Line endX="617.800048828125" endY="-3.814697265625E-6" layoutX="115.0" layoutY="62.0" startX="-100.0" stroke="#f49510" />
+      <ComboBox fx:id="typeOfTaskComboBox" layoutX="514.0" layoutY="88.0" prefHeight="38.0" prefWidth="168.0" promptText="Tip zadatka" />
+      <Button fx:id="resourcesButton" layoutX="514.0" layoutY="135.0" mnemonicParsing="false" onAction="#chooseResources" prefHeight="38.0" prefWidth="168.0" text="Izaberi resurse" />
+      <Button layoutX="40.0" layoutY="220.0" mnemonicParsing="false" onAction="#potvrdi" prefHeight="46.0" prefWidth="98.0" text="POTVRDI" />
+      <Button layoutX="159.0" layoutY="220.0" mnemonicParsing="false" onAction="#readTask" prefHeight="45.0" prefWidth="110.0" text="Odaberi postojeći zadatak" textAlignment="CENTER" wrapText="true" />
+      <Line endX="617.800048828125" layoutX="115.0" layoutY="282.0" startX="-100.0" stroke="#ec9537" />
+      <TableView fx:id="tasksTableView" layoutX="14.0" layoutY="290.0" prefHeight="402.0" prefWidth="614.0">
+        <columns>
+          <TableColumn fx:id="taskTableColumn" prefWidth="120.80001258850098" text="ZADATAK" />
+          <TableColumn fx:id="progressTableColumn" prefWidth="492.0000061035156" text="PROGRESS" />
+        </columns>
+      </TableView>
+      <Button layoutX="647.0" layoutY="319.0" mnemonicParsing="false" onAction="#pokreni" prefHeight="30.0" prefWidth="78.0" text="Pokreni sve" />
+      <Button layoutX="647.0" layoutY="358.0" mnemonicParsing="false" onAction="#izbrisi" prefHeight="29.0" prefWidth="78.0" text="Izbriši sve" />
+      <Button layoutX="651.0" layoutY="611.0" mnemonicParsing="false" onAction="#pauziraj" prefHeight="26.0" prefWidth="70.0" text="Pauziraj" />
+      <Button layoutX="651.0" layoutY="650.0" mnemonicParsing="false" onAction="#nastavi" prefHeight="26.0" prefWidth="70.0" text="Nastavi" />
+      <Button layoutX="647.0" layoutY="401.0" mnemonicParsing="false" onAction="#pokreniTask" prefHeight="30.0" prefWidth="78.0" text="Pokreni" />
+      <Button layoutX="647.0" layoutY="446.0" mnemonicParsing="false" onAction="#izbrisiTask" prefHeight="30.0" prefWidth="78.0" text="Izbrisi" />
+      <Button layoutX="631.0" layoutY="520.0" mnemonicParsing="false" onAction="#pregledRezultata" prefHeight="45.0" prefWidth="110.0" text="PREGLED REZULTATA" textAlignment="CENTER" wrapText="true" />
+   </children>
+</AnchorPane>
